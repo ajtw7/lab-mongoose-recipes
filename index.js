@@ -21,3 +21,17 @@ mongoose
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
+
+Recipe.create({
+    title: "Brioche Breakfast Bake w/ Crispy Bacon",
+    level: ['Easy Peasy'],
+    ingredients: ['Eggs, Double Cream', 'Milk', 'Maple Syrup', 'Vanilla Extract', 'Punnet Blueberries', 'Brioche Rolls', 'Pecan Halves', 'Bacon', 'Icing Sugar'],
+    cuisine: 'American',
+    dishType: ['Breakfast'],
+    image: '',
+    duration: 25,
+    creator: 'Cassie Best',
+    created: Date.now
+  })
+  .then(addedRecipe => console.log(`${addedRecipe} has been added to the DB`))
+  .catch(err => console.log(err))
